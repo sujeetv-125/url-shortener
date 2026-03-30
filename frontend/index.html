@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K8s URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✂️ URL Shortener</h1>
+        <p class="subtitle">Powered by FastAPI, Redis, and Kubernetes</p>
+        
+        <div class="card">
+            <div class="input-group">
+                <input type="text" id="urlInput" placeholder="Paste your long URL here (e.g., github.com)">
+                <button id="shortenBtn" onclick="shortenUrl()">Shorten</button>
+            </div>
+            
+            <div id="result" class="result hidden">
+                <p>Your short URL:</p>
+                <div class="short-url-container">
+                    <a id="shortUrlLink" href="#" target="_blank"></a>
+                    <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+                </div>
+            </div>
+            
+            <div id="error" class="error hidden"></div>
+        </div>
+        
+        <div class="status-indicator">
+            API Status: <span id="apiStatus" class="status-dot">Checking...</span>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
